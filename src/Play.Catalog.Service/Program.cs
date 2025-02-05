@@ -1,10 +1,6 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Driver;
 using Play.Catalog.Service.Entities;
-using Play.Catalog.Service.Repositories;
-using Play.Catalog.Service.Settings;
+using Play.Common.MongoDB;
+using Play.Common.Settings;
 
 ServiceSettings serviceSettings;
 
@@ -22,7 +18,8 @@ builder.Services.AddSwaggerGen();
 
 serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-builder.Services.AddMongo().AddMongoRepository<Item>("items");
+builder.Services.AddMongo()
+    .AddMongoRepository<Item>("items");
 
 var app = builder.Build();
 
