@@ -1,4 +1,6 @@
+using MassTransit;
 using Play.Catalog.Service.Entities;
+using Play.Catalog.Service.Settings;
 using Play.Common.MongoDB;
 using Play.Common.Settings;
 
@@ -20,6 +22,18 @@ serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<
 
 builder.Services.AddMongo()
     .AddMongoRepository<Item>("items");
+
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        var rabbitMqSettings = builder.Configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
+        cfg.Host(rabbitMqSettings.Host);
+        cfg.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+    });
+});
+
+//builder.Services.AddMassTransitHostedService();
 
 var app = builder.Build();
 

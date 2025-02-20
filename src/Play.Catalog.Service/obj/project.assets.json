@@ -105,25 +105,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/8.0.12": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "1.4.3"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -822,21 +803,6 @@
         "masstransit.rabbitmq.8.3.6.nupkg.sha512",
         "masstransit.rabbitmq.nuspec",
         "mt-logo-small.png"
-      ]
-    },
-    "Microsoft.AspNetCore.OpenApi/8.0.12": {
-      "sha512": "ethhl6H45KrU7d8FRFBKAaJpMKdy2nJwG7j3XSt1b4o+H6saDr+2NQpEMIB1QTHxsrB2Un4C+j01PT5b75kOYQ==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.openapi/8.0.12",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net8.0/Microsoft.AspNetCore.OpenApi.dll",
-        "lib/net8.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.8.0.12.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
@@ -2047,7 +2013,6 @@
     "net9.0": [
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.3.6",
-      "Microsoft.AspNetCore.OpenApi >= 8.0.12",
       "OmerF.MongoDb.Common >= 1.0.0",
       "Play.Catalog.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -2087,8 +2052,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Contracts\\Play.Catalog.Contracts.csproj": {
-              "projectPath": "c:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Contracts\\Play.Catalog.Contracts.csproj"
+            "C:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Contracts\\Play.Catalog.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Contracts\\Play.Catalog.Contracts.csproj"
             }
           }
         }
@@ -2116,10 +2081,6 @@
           "MassTransit.RabbitMQ": {
             "target": "Package",
             "version": "[8.3.6, )"
-          },
-          "Microsoft.AspNetCore.OpenApi": {
-            "target": "Package",
-            "version": "[8.0.12, )"
           },
           "OmerF.MongoDb.Common": {
             "target": "Package",
