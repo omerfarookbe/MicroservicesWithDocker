@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SWb2tvU8ZR8=",
+  "dgSpecHash": "qUwRvE53nS4=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
+  "projectFilePath": "C:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omer\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.12\\microsoft.aspnetcore.openapi.8.0.12.nupkg.sha512",
