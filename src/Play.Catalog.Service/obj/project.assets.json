@@ -442,9 +442,11 @@
           }
         }
       },
-      "OmerF.MongoDB.Common/1.0.0": {
+      "OmerF.MongoDB.RabbitMQ.Common/1.0.1": {
         "type": "package",
         "dependencies": {
+          "MassTransit.AspNetCore": "7.3.1",
+          "MassTransit.RabbitMQ": "8.3.6",
           "Microsoft.Extensions.Configuration": "9.0.1",
           "Microsoft.Extensions.Configuration.Binder": "9.0.1",
           "Microsoft.Extensions.DependencyInjection": "9.0.1",
@@ -1573,15 +1575,16 @@
         "packageIcon.png"
       ]
     },
-    "OmerF.MongoDB.Common/1.0.0": {
-      "sha512": "DHXp8onRPNwvlKn1HDRA8G0S+8glRDrKKmaGnV+KisTlkFkgvP/37WOSu+DFRASEnBTwsnwn8kr8fG76sOh9zg==",
+    "OmerF.MongoDB.RabbitMQ.Common/1.0.1": {
+      "sha512": "U99abmsaBKi9gsmPp+tJl6LkFzxtewWqUiZCMocx/7JH1YP3pI5buufReMrPQatlR+54Ry7U7QaM9vjP8WLx1Q==",
       "type": "package",
-      "path": "omerf.mongodb.common/1.0.0",
+      "path": "omerf.mongodb.rabbitmq.common/1.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net9.0/Play.Common.dll",
-        "omerf.mongodb.common.1.0.0.nupkg.sha512",
-        "omerf.mongodb.common.nuspec"
+        "omerf.mongodb.rabbitmq.common.1.0.1.nupkg.sha512",
+        "omerf.mongodb.rabbitmq.common.nuspec"
       ]
     },
     "RabbitMQ.Client/7.0.0": {
@@ -2011,9 +2014,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "MassTransit.AspNetCore >= 7.3.1",
-      "MassTransit.RabbitMQ >= 8.3.6",
-      "OmerF.MongoDb.Common >= 1.0.0",
+      "OmerF.MongoDb.RabbitMQ.Common >= 1.0.1",
       "Play.Catalog.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -2074,17 +2075,9 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "MassTransit.AspNetCore": {
+          "OmerF.MongoDb.RabbitMQ.Common": {
             "target": "Package",
-            "version": "[7.3.1, )"
-          },
-          "MassTransit.RabbitMQ": {
-            "target": "Package",
-            "version": "[8.3.6, )"
-          },
-          "OmerF.MongoDb.Common": {
-            "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

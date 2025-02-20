@@ -123,17 +123,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "MassTransit.AspNetCore": {
+            "OmerF.MongoDb.RabbitMQ.Common": {
               "target": "Package",
-              "version": "[7.3.1, )"
-            },
-            "MassTransit.RabbitMQ": {
-              "target": "Package",
-              "version": "[8.3.6, )"
-            },
-            "OmerF.MongoDb.Common": {
-              "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

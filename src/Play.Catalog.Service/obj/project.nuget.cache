@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UGnqJqaXQpo=",
+  "dgSpecHash": "C+PvuIAnY0g=",
   "success": true,
   "projectFilePath": "C:\\Users\\Omer\\Documents\\Projects\\Learning\\MicroservicesWithDocker\\src\\Play.Catalog.Service\\Play.Catalog.Service.csproj",
   "expectedPackageFiles": [
@@ -29,7 +29,7 @@
     "C:\\Users\\Omer\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\mongodb.bson\\3.1.0\\mongodb.bson.3.1.0.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\mongodb.driver\\3.1.0\\mongodb.driver.3.1.0.nupkg.sha512",
-    "C:\\Users\\Omer\\.nuget\\packages\\omerf.mongodb.common\\1.0.0\\omerf.mongodb.common.1.0.0.nupkg.sha512",
+    "C:\\Users\\Omer\\.nuget\\packages\\omerf.mongodb.rabbitmq.common\\1.0.1\\omerf.mongodb.rabbitmq.common.1.0.1.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\rabbitmq.client\\7.0.0\\rabbitmq.client.7.0.0.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\Omer\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
