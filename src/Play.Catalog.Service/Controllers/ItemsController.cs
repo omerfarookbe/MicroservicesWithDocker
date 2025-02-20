@@ -1,5 +1,7 @@
 using System;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Play.Catalog.Contracts;
 using Play.Catalog.Service.Dtos;
 using Play.Catalog.Service.Entities;
 using Play.Common;
@@ -13,33 +15,19 @@ namespace Play.Catalog.Service.Controllers
 
         private readonly IRepository<Item> itemsRepository;
 
-        private static int requestCounter = 0;
+        private readonly IPublishEndpoint publishEndpoint;
 
-        public ItemsController(IRepository<Item> itemsRepository)
+        public ItemsController(IRepository<Item> itemsRepository, IPublishEndpoint publishEndpoint)
         {
             this.itemsRepository = itemsRepository;
+            this.publishEndpoint = publishEndpoint;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ItemDto>>> GetAsync()
         {
-            requestCounter++;
-            Console.WriteLine($"Request {requestCounter} : Starting...");
-            if (requestCounter <= 2)
-            {
-                Console.WriteLine($"Request {requestCounter} : Delaying...");
-                await Task.Delay(TimeSpan.FromSeconds(10));
-            }
-
-            if (requestCounter <= 4)
-            {
-                Console.WriteLine($"Request {requestCounter} : 500 (Internal Server Error)");
-                return StatusCode(500);
-            }
-
             var items = (await itemsRepository.GetAllAsync())
                 .Select(item => item.AsDto());
-            Console.WriteLine($"Request {requestCounter} : 200 (OK)");
             return Ok(items);
         }
 
@@ -66,6 +54,7 @@ namespace Play.Catalog.Service.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
             await itemsRepository.CreateAsync(item);
+            await publishEndpoint.Publish(new CatalogItemCreated(item.Id, item.Name, item.Description));
             return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         }
 
@@ -83,7 +72,7 @@ namespace Play.Catalog.Service.Controllers
             existingItem.Description = updateItemDto.Description;
             existingItem.Price = updateItemDto.Price;
             await itemsRepository.UpdateAsync(existingItem);
-
+            await publishEndpoint.Publish(new CatalogItemUpdate(existingItem.Id, existingItem.Name, existingItem.Description));
             return NoContent();
         }
 
@@ -97,6 +86,7 @@ namespace Play.Catalog.Service.Controllers
             }
 
             await itemsRepository.RemoveAsync(existingItem.Id);
+            await publishEndpoint.Publish(new CatalogItemDeleted(existingItem.Id));
             return NoContent();
         }
     }
