@@ -21,8 +21,8 @@ builder.Services.AddSwaggerGen();
 serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
 builder.Services.AddMongo()
-    .AddMassTransitWithRabbitMq()
-    .AddMongoRepository<Item>("items");
+    .AddMongoRepository<Item>("items")
+    .AddMassTransitWithRabbitMq();
 
 var app = builder.Build();
 

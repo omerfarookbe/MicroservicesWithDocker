@@ -72,7 +72,7 @@ namespace Play.Catalog.Service.Controllers
             existingItem.Description = updateItemDto.Description;
             existingItem.Price = updateItemDto.Price;
             await itemsRepository.UpdateAsync(existingItem);
-            await publishEndpoint.Publish(new CatalogItemUpdate(existingItem.Id, existingItem.Name, existingItem.Description));
+            await publishEndpoint.Publish(new CatalogItemUpdated(existingItem.Id, existingItem.Name, existingItem.Description));
             return NoContent();
         }
 
